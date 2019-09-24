@@ -1,0 +1,26 @@
+plugins {
+    id "com.palantir.graal" version "0.6.0-1-ga74bcc6"
+}
+
+group 'ru.vtarasov.graal'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://plugins.gradle.org/m2/"
+    }
+}
+
+dependencies {
+    compile group: 'postgresql', name: 'postgresql', version: '9.0-801.jdbc4'
+}
+
+apply plugin: "com.palantir.graal"
+graal {
+    mainClass 'ru.vtarasov.graal.Application'
+    outputName 'my-app'
+    graalVersion '1.0.0-rc8'
+}
